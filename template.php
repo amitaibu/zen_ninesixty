@@ -110,8 +110,13 @@ function zen_ninesixty_preprocess_page(&$vars, $hook) {
   // (home page, node of certain type, etc.)
   $classes = split(' ', $vars['body_classes']);
 
-if (theme_get_setting('zen_ninesixty_debug')) {
-    $classes[] = 'show-grid'; // Optionally add the wireframes style.
+  if (theme_get_setting('zen_ninesixty_debug')) {
+    // Optionally add the debug CSS.
+    $classes[] = 'show-grid';
+    drupal_add_css(drupal_get_path('theme', 'zen_ninesixty') .'/framework/debug.css', 'theme');
+
+    // Get the newley added style.
+    $vars['styles'] = drupal_get_css();
   }
 
   $vars['body_classes_array'] = $classes;
