@@ -99,29 +99,18 @@ function zen_ninesixty_preprocess_page(&$vars, $hook) {
   $vars['main_menu_links']      = theme('links', $vars['primary_links'], array('class' => 'links main-menu'));
   $vars['secondary_menu_links'] = theme('links', $vars['secondary_links'], array('class' => 'links secondary-menu'));
 
-  // Make sure framework styles are placed above all others.
-  $vars['css_alt'] = zen_ninesixty_css_reorder($vars['css']);
-  $vars['styles'] = drupal_get_css($vars['css_alt']);
-
   // This line of code was borrowed from conditional_style module (http://drupal.org/project/conditional_styles)
   $vars['styles'] .= $vars['conditional_styles'] = variable_get('conditional_styles_' . $GLOBALS['theme'], '');
 
-  // Classes for body element. Allows advanced theming based on context
-  // (home page, node of certain type, etc.)
-  $classes = split(' ', $vars['body_classes']);
-
   if (theme_get_setting('zen_ninesixty_debug')) {
     // Optionally add the debug CSS.
-    $classes[] = 'show-grid';
+    $vars['classes_array'][] = 'show-grid';
     drupal_add_css(drupal_get_path('theme', 'zen_ninesixty') .'/framework/debug.css', 'theme');
-
-    // Get the newley added style.
-    $vars['styles'] = drupal_get_css();
   }
 
-  $vars['body_classes_array'] = $classes;
-  $vars['body_classes'] = implode(' ', $classes); // Concatenate with spaces.
-
+  // Make sure framework styles are placed above all others.
+  $vars['css_alt'] = zen_ninesixty_css_reorder($vars['css']);
+  $vars['styles'] = drupal_get_css($vars['css_alt']);
 }
 
 /**
