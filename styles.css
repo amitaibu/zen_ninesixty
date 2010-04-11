@@ -1,0 +1,117 @@
+/* $Id: styles.css,v 1.1 2009/06/26 00:33:39 duvien Exp $ */
+
+h1#site-name {
+  margin-bottom: 0;
+}
+
+#site-header,
+#site-subheader,
+#footer-region,
+.column,
+.node,
+.comment,
+.block {
+  margin-bottom: 1.5em;
+}
+
+/* HTML Element */
+pre, code
+  {
+    font-size: 1.0em; /* Monospace fonts can be hard to read */
+    font-family: "Bitstream Vera Sans Mono", "Courier New", monospace;
+  }
+
+table
+  {
+    border-collapse: collapse;
+    width: 100%; /* Prevent cramped-looking tables */
+  }
+
+  th,
+  thead th,
+  tbody th
+  {
+    text-align: left;
+    padding-right: 0;
+    border-bottom: none;
+  }
+
+  tbody
+  {
+    border-top: none;
+  }
+
+/** abbreviations **/
+  abbr
+  {
+    border-bottom: 1px dotted #ccc;
+    cursor: help;
+    white-space: nowrap;
+  }
+
+  /* Date-based "abbreviations" show computer-friendly timestamps which are not
+     human-friendly. */
+  abbr.created
+  {
+    border: none;
+    cursor: auto;
+    white-space: normal;
+  }
+
+/** images **/
+  img
+  {
+    border: 0;
+  }
+
+/** horizontal rules **/
+  hr
+  {
+    height: 1px;
+    border: 1px solid #ccc;
+  }
+
+
+  fieldset
+  {
+    margin: 1em 0;
+    padding: 0.5em;
+	border:1px solid #ccc;
+  }
+
+fieldset {}
+
+/*
+** Formatting for administration page
+**
+** The admin panel styles are a mess. IE has problems with this so this is
+** only a temporary fix. This should be fixed in core.
+*/
+div.admin-panel {
+  padding: 0;
+}
+
+div.admin-panel .body {
+  padding: 0 !important;
+}
+
+div.admin .left,
+div.admin .right {
+  width: 50%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+div.admin .right .admin-panel {
+  margin-left: 10px;
+}
+
+/* Theme settings */
+#div-zen-debug strong
+  {
+    float: left;
+    width: 90px;
+    margin-left: 0;
+    margin-right: 10px;
+    text-align: left;
+  }
