@@ -8,6 +8,7 @@ description = A blank base Zen sub theme using the 960 Grid System (960.gs). See
   ; The screenshot used on the admin/build/themes page.
 screenshot = images/screenshot.png
 
+
   ; "core" specifies the version of Drupal that this theme is compatible with.
   ; "base theme" specifies that this is a theme that uses the "zen" theme as its
   ; base theme. Its unlikely you will ever need to change these, but they are
@@ -19,34 +20,40 @@ base theme = zen
   ; This section adds CSS files to your theme. The media type is specified in
   ; the brackets. Typical CSS media types include "all", "screen", "print", and
   ; "handheld". See http://www.w3.org/TR/CSS21/media.html#media-types for a full
-  ; list of stylesheet media types in CSS 2.1.
+  ; list of stylesheet media types in CSS 2.1. The iPhone's preferred media type
+  ; is based on the CSS3 Media queries. http://www.w3.org/TR/css3-mediaqueries/
   ;
   ; You can also override any of Zen's stylesheets or any module's stylesheets,
   ; an /extremely/ useful feature. See the excellent Drupal 6 Theme Guide at
   ; http://drupal.org/node/171209 for more details.
-stylesheets[all][]   = layout.css
-stylesheets[all][]   = html-elements.css
-stylesheets[all][] = tabs.css
-stylesheets[all][] = messages.css
-stylesheets[all][] = block-editing.css
-; stylesheets[all][] = wireframes.css
-stylesheets[all][] = framework/reset.css
-stylesheets[all][] = framework/text.css
-stylesheets[all][] = framework/960.css
-stylesheets[all][] = framework/debug.css
-stylesheets[all][] = styles.css
-stylesheets[print][] = print.css
-  ; To prevent stylesheets of a base theme or of a module from being included in
-  ; our sub-theme, we specify it in our .info file (and we don't need to have a
-  ; stylesheet in our sub-theme with that name.) For example, we prevent the
-  ; zen.css file in the base theme from being included by specifying it here.
-stylesheets[all][]   = zen.css
+stylesheets[all][]   = css/html-reset.css
+stylesheets[all][]   = css/wireframes.css
+stylesheets[all][]   = css/page-backgrounds.css
+stylesheets[all][]   = css/tabs.css
+stylesheets[all][]   = css/messages.css
+stylesheets[all][]   = css/pages.css
+stylesheets[all][]   = css/block-editing.css
+stylesheets[all][]   = css/blocks.css
+stylesheets[all][]   = css/navigation.css
+stylesheets[all][]   = css/panels-styles.css
+stylesheets[all][]   = css/views-styles.css
+stylesheets[all][]   = css/nodes.css
+stylesheets[all][]   = css/comments.css
+stylesheets[all][]   = css/forms.css
+stylesheets[all][]   = css/fields.css
+stylesheets[print][] = css/print.css
+; stylesheets[handheld][] = css/mobile.css
+; stylesheets[only screen and (max-device-width: 480px)][] = css/iphone.css
+
+   ; Add 960 CSS files.
+stylesheets[all][]   = framework/960.css
 
   ; Set the conditional stylesheets that are processed by IE.
-conditional-stylesheets[if IE][all][] = ie.css
+conditional-stylesheets[if IE][all][]       = css/ie.css
+conditional-stylesheets[if lte IE 6][all][] = css/ie6.css
 
-  ; Optionally add some jquery scripts to your theme.
-; scripts[] = script.js
+  ; Optionally add some JavaScripts to your theme.
+; scripts[] = js/script.js
 
   ; The regions defined in Zen's default page.tpl.php file.  The name in
   ; brackets is the name of the variable in the page.tpl.php file, (e.g.
@@ -57,14 +64,15 @@ conditional-stylesheets[if IE][all][] = ie.css
   ; To add a new region, copy Zen's page.tpl.php to your sub-theme's directory,
   ; add a line line to this file, and then add the new variable to your
   ; page.tpl.php template.
-regions[left]           = left sidebar
-regions[right]          = right sidebar
-regions[navbar]         = navigation bar
-regions[content_top]    = content top
-regions[content_bottom] = content bottom
-regions[header]         = header
-regions[footer]         = footer
-regions[closure_region] = closure
+regions[sidebar_first]  = First sidebar
+regions[sidebar_second] = Second sidebar
+regions[navigation]     = Navigation bar
+regions[highlight]      = Highlighted content
+regions[content_top]    = Content top
+regions[content_bottom] = Content bottom
+regions[header]         = Header
+regions[footer]         = Footer
+regions[page_closure]   = Page closure
 
   ; Various page elements output by the theme can be toggled on and off. The
   ; "features" control which of these check boxes display on the

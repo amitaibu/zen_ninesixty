@@ -1,5 +1,5 @@
 <?php
-// $Id: 
+// $Id:
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -69,7 +69,7 @@
       </div> <!--/#site-subheader -->
 	  </div> <!--/#site-header -->
 
-    <div id="main" class="column <?php print ns('grid-16', $left, 4, $right, 3) . ' ' . ns('push-4', !$left, 4); ?>">
+    <div id="main" class="column <?php print ns('grid-16', $sidebar_first, 4, $sidebar_second, 3) . ' ' . ns('push-4', !$sidebar_first, 4); ?>">
   	  <div id="content">
   	    <div id="content-inner">
 
@@ -108,18 +108,18 @@
 	  </div> <!-- //#content -->
 	</div> <!-- //end #main -->
 
-    <?php if ($left): ?>
-    <div id="sidebar-left" class="column sidebar region grid-4 <?php print ns('pull-12', $right, 3); ?>">
+    <?php if ($sidebar_first): ?>
+    <div id="sidebar-left" class="column sidebar region grid-4 <?php print ns('pull-12', $sidebar_second, 3); ?>">
 	    <div id="sidebar-left-inner">
-        <?php print $left; ?>
+        <?php print $sidebar_first; ?>
       </div>
     </div> <!-- //end #sidebar-left-inner -->
     <?php endif; ?>
 
-    <?php if ($right): ?>
+    <?php if ($sidebar_second): ?>
     <div id="sidebar-right" class="column sidebar region grid-3">
 	    <div id="sidebar-right-inner">
-        <?php print $right; ?>
+        <?php print $sidebar_second; ?>
       </div>
     </div> <!--//end #sidebar-right-inner -->
     <?php endif; ?>

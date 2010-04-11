@@ -13,7 +13,7 @@ include_once './' . drupal_get_path('theme', 'zen') . '/theme-settings.php';
  * @return
  *   A form array.
  */
-	
+
 function zen_ninesixty_settings($saved_settings) {
 
   // Get the default values from the .info file.
@@ -29,14 +29,12 @@ function zen_ninesixty_settings($saved_settings) {
 
   /* -- Load debug css - 960 grid */
   $form['zen_ninesixty_debug'] = array(
-	'#prefix'        => '<div id="div-zen-debug"><strong>' . t('Debug Mode:') . '</strong>',
     '#type'          => 'checkbox',
     '#title'         => t('Activate 960 Grid system image'),
     '#default_value' => $settings['zen_ninesixty_debug'],
-    '#description'   => t("Load grid image into page layout using the debug.css"), 
-    '#suffix'        => '</div>',
+    '#description'   => t("Load grid image into page layout using the debug.css"),
   );
- 
+
 
   // Add the base theme's settings.
   $form += zen_settings($saved_settings, $defaults);

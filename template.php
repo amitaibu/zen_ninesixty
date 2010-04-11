@@ -102,14 +102,14 @@ function zen_ninesixty_preprocess_page(&$vars, $hook) {
   // Make sure framework styles are placed above all others.
   $vars['css_alt'] = zen_ninesixty_css_reorder($vars['css']);
   $vars['styles'] = drupal_get_css($vars['css_alt']);
-  
+
   // This line of code was borrowed from conditional_style module (http://drupal.org/project/conditional_styles)
   $vars['styles'] .= $vars['conditional_styles'] = variable_get('conditional_styles_' . $GLOBALS['theme'], '');
 
   // Classes for body element. Allows advanced theming based on context
   // (home page, node of certain type, etc.)
   $classes = split(' ', $vars['body_classes']);
- 
+
 if (theme_get_setting('zen_ninesixty_debug')) {
     $classes[] = 'show-grid'; // Optionally add the wireframes style.
   }
