@@ -110,7 +110,7 @@ function zen_ninesixty_preprocess_page(&$vars, $hook) {
 
   // Make sure framework styles are placed above all others.
   $vars['css_alt'] = zen_ninesixty_css_reorder($vars['css']);
-  $vars['styles'] = drupal_get_css($vars['css_alt']);
+  $vars['styles'] = drupal_get_css();
 }
 
 /**
