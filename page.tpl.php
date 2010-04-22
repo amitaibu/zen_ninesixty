@@ -232,7 +232,7 @@
     <?php endif; ?>
 
     <?php if ($footer || $footer_message || $secondary_links): ?>
-      <div id="footer"><div class="section">
+      <div id="footer"><div class="section clearfix clear">
 
         <?php print theme(array('links__system_secondary_menu', 'links'), $secondary_links,
           array(
