@@ -120,17 +120,19 @@
 </head>
 <body class="<?php print $classes; ?>">
 
+  <?php if ($primary_links): ?>
+    <div id="skip-to-nav"><a href="#main-menu"><?php print t('Jump to Navigation'); ?></a></div>
+  <?php endif; ?>
+
   <div id="page-wrapper"><div id="page" class="container-16 clearfix">
-    <?php if ($primary_links): ?>
-      <div id="skip-to-nav"><a href="#main-menu"><?php print t('Jump to Navigation'); ?></a></div>
-    <?php endif; ?>
+
 
     <div id="header"><div class="section clearfix">
 
       <?php if ($logo): ?>
         <div class="grid-1">
           <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
-        <div>
+        </div>
       <?php endif; ?>
 
       <?php if ($site_name || $site_slogan): ?>
@@ -161,7 +163,7 @@
 
     </div></div> <!-- /.section, /#header -->
 
-    <div id="main-wrapper"><div id="main" class="clearfix <?php if ($primary_links || $navigation) { print ' with-navigation'; } ?> class="column <?php print ns('grid-16', $sidebar_first, 4, $sidebar_second, 3) . ' ' . ns('push-4', !$sidebar_first, 4); ?>">
+    <div id="main-wrapper"><div id="main" class="clearfix <?php if ($primary_links || $navigation) { print ' with-navigation'; } ?> column <?php print ns('grid-16', $sidebar_first, 4, $sidebar_second, 3) . ' ' . ns('push-4', !$sidebar_first, 4); ?>">
 
       <div id="content" class="column"><div class="section">
 

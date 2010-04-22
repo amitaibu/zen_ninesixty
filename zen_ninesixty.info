@@ -15,7 +15,7 @@ screenshot = images/screenshot.png
   ; required fields for a Zen sub-theme. The "engine" field is not used in a
   ; sub-theme since the engine is inherited from its base theme.
 core       = 6.x
-base theme = zen
+base theme = ninesixty
 
   ; This section adds CSS files to your theme. The media type is specified in
   ; the brackets. Typical CSS media types include "all", "screen", "print", and
@@ -26,27 +26,13 @@ base theme = zen
   ; You can also override any of Zen's stylesheets or any module's stylesheets,
   ; an /extremely/ useful feature. See the excellent Drupal 6 Theme Guide at
   ; http://drupal.org/node/171209 for more details.
-stylesheets[all][]   = css/html-reset.css
-stylesheets[all][]   = css/wireframes.css
-stylesheets[all][]   = css/page-backgrounds.css
-stylesheets[all][]   = css/tabs.css
-stylesheets[all][]   = css/messages.css
-stylesheets[all][]   = css/pages.css
-stylesheets[all][]   = css/block-editing.css
-stylesheets[all][]   = css/blocks.css
-stylesheets[all][]   = css/navigation.css
-stylesheets[all][]   = css/panels-styles.css
-stylesheets[all][]   = css/views-styles.css
-stylesheets[all][]   = css/nodes.css
-stylesheets[all][]   = css/comments.css
-stylesheets[all][]   = css/forms.css
-stylesheets[all][]   = css/fields.css
-stylesheets[print][] = css/print.css
-; stylesheets[handheld][] = css/mobile.css
-; stylesheets[only screen and (max-device-width: 480px)][] = css/iphone.css
 
-   ; Add 960 CSS files.
-stylesheets[all][]   = framework/960.css
+; Override 960's reset and text CSS, and use the ones Zen provides.
+stylesheets[all][]   = reset.css
+stylesheets[all][]   = text.css
+
+; Add fresh style CSS.
+
 
   ; Set the conditional stylesheets that are processed by IE.
 conditional-stylesheets[if IE][all][]       = css/ie.css
@@ -104,4 +90,5 @@ settings[zen_wireframes]           = 0
 ; Panels layouts. You can place multiple layouts under the "layouts" folder.
 plugins[panels][layouts] = layouts
 
+settings[960 debug] = 1
 
