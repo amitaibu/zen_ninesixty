@@ -158,7 +158,7 @@
       <?php endif; ?>
 
       <?php if ($search_box): ?>
-        <div id="search-box" class="grid-6 prefix-10"><?php print $search_box; ?></div>
+        <div id="search-box" class="grid-6 suffix-10"><?php print $search_box; ?></div>
       <?php endif; ?>
 
       <?php print $header; ?>
