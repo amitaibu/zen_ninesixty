@@ -1,9 +1,8 @@
 ; $Id:
 
-
   ; The name and description of the theme used on the admin/build/themes page.
-name        = 960 Grid System (Zen sub theme)
-description = A blank base Zen sub theme using the 960 Grid System (960.gs). See the "README.txt" file within the theme folder for more information. Originally the ninesixty theme (http://drupal.org/project/ninesixty) by dvessel. This theme was developed by duvien.com
+name        = Zen-960
+description = A theme using Zen and Ninesixty as base themes. See the "README.txt" file of those two themes.
 
   ; The screenshot used on the admin/build/themes page.
 screenshot = images/screenshot.png
@@ -88,7 +87,6 @@ settings[zen_rebuild_registry]     = 1
 settings[zen_wireframes]           = 0
 
 ; Panels layouts. You can place multiple layouts under the "layouts" folder.
-plugins[panels][layouts] = layouts
+; plugins[panels][layouts] = layouts
 
 settings[960 debug] = 1
-
