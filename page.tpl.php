@@ -217,11 +217,19 @@
         </div></div> <!-- /.section, /#navigation -->
       <?php endif; ?>
 
-      <?php print $sidebar_first; ?>
-
-      <?php print $sidebar_second; ?>
-
     </div></div> <!-- /#main, /#main-wrapper -->
+
+    <?php if ($sidebar_first): ?>
+      <div id="sidebar-first" class="column sidebar region grid-4 <?php print ns('pull-12', $sidebar_second, 3); ?>">
+        <?php print $sidebar_first; ?>
+      </div>
+    <?php endif; ?>
+
+    <?php if ($sidebar_second): ?>
+      <div id="sidebar_second" class="column sidebar region grid-3">
+        <?php print $sidebar_second; ?>
+      </div>
+    <?php endif; ?>
 
     <?php if ($footer || $footer_message || $secondary_links): ?>
       <div id="footer"><div class="section">
