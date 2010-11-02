@@ -26,12 +26,15 @@ base theme = ninesixty
   ; an /extremely/ useful feature. See the excellent Drupal 6 Theme Guide at
   ; http://drupal.org/node/171209 for more details.
 
-; Override 960's reset and text CSS, and use the ones Zen provides.
-stylesheets[all][]   = reset.css
-stylesheets[all][]   = text.css
+; Don't load 960's reset and text CSS, and use the ones Zen provides.
+css remove[] = reset.css
+css remove[] = text.css
+; Don't load Zen's fixed/ liquid layout.
+css remove[] = layout-fixed.css
+css remove[] = layout-liquid.css
 
 ; Add fresh style CSS.
-
+stylesheets[all][] = fresh.css
 
   ; Set the conditional stylesheets that are processed by IE.
 conditional-stylesheets[if IE][all][]       = css/ie.css
@@ -76,17 +79,12 @@ features[] = favicon
 features[] = primary_links
 features[] = secondary_links
 
-  ; Set the default settings to be used in theme-settings.php
-settings[zen_block_editing]        = 1
-settings[zen_breadcrumb]           = yes
-settings[zen_breadcrumb_separator] = ' › '
-settings[zen_breadcrumb_home]      = 1
-settings[zen_breadcrumb_trailing]  = 1
-settings[zen_breadcrumb_title]     = 0
-settings[zen_rebuild_registry]     = 1
-settings[zen_wireframes]           = 0
 
 ; Panels layouts. You can place multiple layouts under the "layouts" folder.
 ; plugins[panels][layouts] = layouts
+; Information added by drupal.org packaging script on 2010-07-11
+version = "6.x-5.x-dev"
+core = "6.x"
+project = "zen_ninesixty"
+datestamp = "1278836444"
 
-settings[960 debug] = 1
