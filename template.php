@@ -77,7 +77,6 @@ if (theme_get_setting('zen_ninesixty_fixed')) {
 }
 // */
 
-
 /**
  * Implementation of HOOK_theme().
  */
@@ -102,9 +101,11 @@ function zen_ninesixty_theme(&$existing, $type, $theme, $path) {
  * @param $hook
  *   The name of the template being rendered (name of the .tpl.php file.)
  */
-function zen_ninesixty_preprocess(&$vars, $hook) {
-  // Call Zen's preprocess.
-  zen_preprocess($vars, $hook);
+function zen_ninesixty_preprocess_page(&$vars, $hook) {
+  // We'll need to calculate the grid based on the existance of the sidebars
+  // so render them here.
+  $vars['sidebar_first'] = render($vars['page']['sidebar_first']);
+  $vars['sidebar_second'] = render($vars['page']['sidebar_second']);
 }
 
 /**

@@ -104,7 +104,7 @@
 
   </div></div> <!-- /.section, /#header -->
 
-  <div id="main-wrapper"><div id="main" class="clearfix<?php if ($main_menu || $page['navigation']) { print ' with-navigation'; } print ns('grid-16', $sidebar_first, 4, $sidebar_second, 3) . ' ' . ns('push-4', !$sidebar_first, 4);?>">
+  <div id="main-wrapper"><div id="main" class="clearfix <?php if ($main_menu || $page['navigation']) { print ' with-navigation'; } ?> <?php print ns('grid-16', $sidebar_first, 4, $sidebar_second, 3) . ' ' . ns('push-4', !$sidebar_first, 4);?>">
 
     <div id="content" class="column"><div class="section">
       <?php print render($page['highlight']); ?>
@@ -148,19 +148,20 @@
       </div></div> <!-- /.section, /#navigation -->
     <?php endif; ?>
 
+    </div> <!-- /#main -->
+
     <?php if ($sidebar_first): ?>
       <div class="grid-4 <?php print ns('pull-12', $sidebar_second, 3); ?>">
-        <?php print render($page['sidebar_first']); ?>
+        <?php print $sidebar_first; ?>
       </div>
     <?php endif; ?>
 
     <?php if ($sidebar_second): ?>
       <div class="grid-3">
-        <?php print render($page['sidebar_second']); ?>
+        <?php print $sidebar_second; ?>
       </div>
     <?php endif; ?>
-
-  </div></div> <!-- /#main, /#main-wrapper -->
+  </div> <!-- /#main, /#main-wrapper -->
 
   <?php if ($page['footer'] || $secondary_menu): ?>
     <div id="footer" class="prefix-1 suffix-1"><div class="section grid-14">
