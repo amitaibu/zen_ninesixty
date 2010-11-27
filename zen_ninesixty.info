@@ -13,7 +13,7 @@ screenshot = images/screenshot.png
   ; base theme. Its unlikely you will ever need to change these, but they are
   ; required fields for a Zen sub-theme. The "engine" field is not used in a
   ; sub-theme since the engine is inherited from its base theme.
-core       = 6.x
+core       = 7.x
 base theme = ninesixty
 
   ; This section adds CSS files to your theme. The media type is specified in
@@ -82,9 +82,4 @@ features[] = secondary_links
 
 ; Panels layouts. You can place multiple layouts under the "layouts" folder.
 ; plugins[panels][layouts] = layouts
-; Information added by drupal.org packaging script on 2010-07-11
-version = "6.x-5.x-dev"
-core = "6.x"
-project = "zen_ninesixty"
-datestamp = "1278836444"
 
