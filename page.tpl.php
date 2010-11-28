@@ -99,8 +99,9 @@
         <?php endif; ?>
       </div> <!-- /#name-and-slogan -->
     <?php endif; ?>
-
-    <?php print render($page['header']); ?>
+    <div class="grid-16">
+      <?php print render($page['header']); ?>
+    </div>
 
   </div></div> <!-- /.section, /#header -->
 
