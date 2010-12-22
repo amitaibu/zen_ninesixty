@@ -115,11 +115,17 @@ function zen_ninesixty_preprocess(&$vars, $hook) {
  * @param $hook
  *   The name of the template being rendered ("page" in this case.)
  */
-/* -- Delete this line if you want to use this function
 function zen_ninesixty_preprocess_page(&$vars, $hook) {
-  $vars['sample_variable'] = t('Lorem ipsum.');
+  // Make zen-960 aware of IE unlimited CSS module.
+  // http://drupal.org/project/unlimited_css
+  if (module_exists('unlimited_css')) {
+    // $vars['css_alt'] is created by ninexity theme.
+    // See ninesixty_preprocess_page().
+    $vars['css'] = $vars['css_alt'];
+    // Make sure the styles are re-processed.
+    unlimited_css_preprocess_page($vars);
+  }
 }
-// */
 
 /**
  * Override or insert variables into the node templates.
